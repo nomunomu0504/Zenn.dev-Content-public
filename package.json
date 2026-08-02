@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/nomunomu0504/Zenn.dev-Content#readme",
   "dependencies": {
-    "zenn-cli": "^0.1.66"
+    "npm-check-updates": "^23.0.0",
+    "zenn-cli": "^0.5.2"
   }
 }
