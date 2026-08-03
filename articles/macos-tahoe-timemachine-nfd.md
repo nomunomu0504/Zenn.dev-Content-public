@@ -227,6 +227,28 @@ sudo tmutil startbackup
  300s Running=1 BackupPhase = Copying          ← 継続
 ```
 
+### その後: 初回フルバックアップが完走しました
+
+念のため追記します。**約25時間後に完走しました。**
+
+```
+$ tmutil listbackups
+/Volumes/.timemachine/.../2026-08-04-075644.backup
+
+$ defaults read /Library/Preferences/com.apple.TimeMachine.plist Destinations
+RESULT = 0;          ← 半年ぶりに 70 から 0 へ
+```
+
+| | |
+|---|---|
+| 所要時間 | **約25時間**（Wi-Fi 5GHz 経由） |
+| 実データ量 | **1.07 TB** |
+| NAS上のサイズ | 1.1 TB / 609バンド |
+
+**リネーム以外は何も変えていません。** 途中で試した `nsmb.conf` の調整も、暗号化の設定も、結局は関係ありませんでした。
+
+なお速度は**ファイル数に律速**されていました。約100ファイル/秒で頭打ちになるので、大きいファイルの区間は一気に進み、小さいファイルの区間で遅くなります。**2回目以降は差分なので数分で終わります。**
+
 :::message alert
 **sparsebundleを作り直すと日本語名に戻ります。**作成のたびにリネームが必要です。
 :::
