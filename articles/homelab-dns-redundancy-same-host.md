@@ -3,7 +3,7 @@ title: "「冗長化しているつもり」だった ── DNSを2台にして
 emoji: "🛟"
 type: "tech"
 topics: ["proxmox", "dns", "dnsmasq", "homelab", "インフラ"]
-published: false
+published: true
 ---
 
 ## 結論
