@@ -3,7 +3,7 @@ title: "監視25件を入れていたのに、7時間気づけなかった ─�
 emoji: "💀"
 type: "tech"
 topics: ["監視", "cron", "uptimekuma", "sre", "インフラ"]
-published: false
+published: true
 ---
 
 ## 結論
@@ -18,7 +18,8 @@ HTTPで叩いて200が返るか、ポートが開いているか、pingが返る
 
 ```bash
 # ジョブが成功したときだけ、ハートビートを送る
-30 4 * * * root /opt/job.py >> /var/log/job.log 2>&1 && curl -fsS https://kuma/api/push/xxxx
+30 4 * * * root /opt/job.py >> /var/log/job.log 2>&1 \
+  && curl -fsS https://uptime.example.com/api/push/aBcD1234EfGh
 ```
 
 以下は、そこに至った経緯と、実装するときに踏んだ罠の記録です。
@@ -110,16 +111,16 @@ cronの末尾に足すだけです。
 
 ```bash
 # ❌ これだと失敗しても && が成立する
-... && curl -sS https://kuma/api/push/xxxx
+... && curl -sS https://uptime.example.com/api/push/aBcD1234EfGh
 ```
 
 **デフォルトの `curl` は、HTTPが500を返しても終了コード0（成功）を返します。**
 
-つまり、**Kuma側が落ちていても、ハートビートを送ったつもりになります。** さらに悪いことに、ジョブ本体が成功していれば `&&` は成立するので、**壊れていることに気づけません**。
+つまり、**Uptime Kuma 側が落ちていても、ハートビートを送ったつもりになります。** さらに悪いことに、ジョブ本体が成功していれば `&&` は成立するので、**壊れていることに気づけません**。
 
 ```bash
 # ✅ -f を付けるとHTTPエラーを失敗として扱う
-... && curl -fsS https://kuma/api/push/xxxx
+... && curl -fsS https://uptime.example.com/api/push/aBcD1234EfGh
 ```
 
 :::message alert
