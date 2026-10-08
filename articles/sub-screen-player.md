@@ -2,7 +2,7 @@
 title: "USB サブディスプレイ upHere D92 の通信を解析して、Rust で Mac・Linux・Windows から動かすツールを作った"
 emoji: "⏰"
 type: "tech"
-topics: ["rust", "usb", "hid", "個人開発", "リバースエンジニアリング"]
+topics: ["rust", "usb", "hid", "個人開発", "oss"]
 published: false
 ---
 
