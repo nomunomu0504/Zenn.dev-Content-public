@@ -6,7 +6,7 @@ topics: ["rust", "usb", "hid", "個人開発", "oss"]
 published: true
 ---
 
-PC の横に、upHere の 9.2 インチのサブディスプレイ「D92」を置いています。1920x462 の横長なバー型のディスプレイで、モニターの下や PC ケースの中に置いて、時計やシステム情報を表示するためのものです。
+モニターの下に、upHere の 9.2 インチのサブディスプレイ「D92」を置いています。1920x462 の横長なバー型のディスプレイで、時計やシステム情報を表示するためのものです。
 
 このディスプレイを macOS・Linux・Windows のどれからでも動かせるツール「sub-screen-player」を Rust で作って、オープンソースで公開しました。この記事では、公式アプリの通信を調べてプロトコルを解き明かすまでの流れと、ツールの設計について書きます。
 
@@ -16,6 +16,13 @@ https://github.com/nomunomu0504/sub-screen-player
 
 ![sub-screen-player が D92 に表示している時計](/images/sub-screen-player/clock.png)
 *sub-screen-player が D92 に表示している時計（1920x462）*
+
+:::message
+**追記（2026-10-08）**: v0.2.0 で、時刻と CPU・メモリ・ネットワーク・ディスクの使用状況を、直近1分のグラフ付きで並べるダッシュボード（`ssp dashboard`）を追加しました。時計で日本語の日付・曜日も表示できるようになっています。表示のパターンは[サイトのトップ](https://subscreen.dev/ja/)にまとめています。
+:::
+
+![v0.2.0 で追加したダッシュボード](/images/sub-screen-player/dashboard.png)
+*v0.2.0 で追加したダッシュボード（`ssp dashboard`）*
 
 ## きっかけ
 
@@ -183,6 +190,7 @@ powershell -c "irm https://subscreen.dev/install.ps1 | iex"   # Windows
 
 ```sh
 ssp devices                      # ディスプレイの一覧
+ssp dashboard                    # 時刻と CPU・メモリ・ネットワーク・ディスクを表示
 ssp show photo.jpg --fit cover   # 画像を表示
 ssp brightness 60                # 明るさを 60% に
 ssp off                          # 画面を消す（ssp on でつける）
