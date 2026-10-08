@@ -24,6 +24,13 @@ https://github.com/nomunomu0504/sub-screen-player
 ![v0.2.0 で追加したダッシュボード](/images/sub-screen-player/dashboard.png)
 *v0.2.0 で追加したダッシュボード（`ssp dashboard`）*
 
+:::message
+**追記（2026-10-09）**: v0.3 と v0.4 で、表示できるものが増えました。Claude Code の使用量のパネル（今の5時間枠と今日のトークン数。手元のログを読むだけで、外部には何も送りません）、スクリプトから送った数値のパネル（`ssp metric set`）、HTML で作った Web ページ（`ssp web`）、動画と GIF などのアニメーション（`ssp show`）です。v0.4 からは画面の変わった部分だけを送るので、時計なら1フレームあたり約 50 KB が約 3.5 KB になりました。
+:::
+
+![v0.3 で追加した Claude Code のパネル](/images/sub-screen-player/dashboard-claude-code.png)
+*v0.3 で追加した Claude Code のパネル（`ssp dashboard --widgets clock,claude-code,cpu,memory`）*
+
 ## きっかけ
 
 D92 は HDMI ではなく、専用のアプリから USB 経由で画像を送って表示する仕組みです。ところが、そのアプリ（MiraBox Craft）は Windows 専用で、普段使っている Mac からは何も表示できませんでした。
