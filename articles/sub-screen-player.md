@@ -172,11 +172,11 @@ pub trait Driver: Send + Sync {
 
 ## 使い方
 
-macOS・Linux はターミナルで、Windows は PowerShell で次の1行を実行すると、最新のリリースをダウンロードし、チェックサムを確認してからインストールします。
+macOS・Linux はターミナルで、Windows は PowerShell かコマンドプロンプトで次の1行を実行すると、最新のリリースをダウンロードし、チェックサムを確認してからインストールします。
 
 ```sh
-curl -fsSL https://subscreen.dev/install.sh | sh    # macOS・Linux
-irm https://subscreen.dev/install.ps1 | iex        # Windows
+curl -fsSL https://subscreen.dev/install.sh | sh              # macOS・Linux
+powershell -c "irm https://subscreen.dev/install.ps1 | iex"   # Windows
 ```
 
 `ssp serve` でデーモンを起動すると時計が表示されます。あとは別のターミナルから操作します。
