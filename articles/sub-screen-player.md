@@ -31,6 +31,16 @@ https://github.com/nomunomu0504/sub-screen-player
 ![v0.3 で追加した Claude Code のパネル](/images/sub-screen-player/dashboard-claude-code.png)
 *v0.3 で追加した Claude Code のパネル（`ssp dashboard --widgets clock,claude-code,cpu,memory`）*
 
+:::message
+**追記（2026-10-09）**: v0.5 で、表示中の内容に重ねる通知（`ssp notify`）、時計・動画・パネルをブラウザなしで並べるレイアウト（`ssp layout`）、時刻で表示・明るさ・点灯を切り替えるスケジュール（設定ファイルの `[[schedule]]`）を追加しました。`ssp claude-code hooks --install` を一度実行すると、Claude Code が許可や返答を待っているときと作業を終えたときに、D92 に通知が出ます。
+:::
+
+![v0.5 で追加した通知](/images/sub-screen-player/notify.png)
+*v0.5 で追加した通知（Claude Code が許可を待っているときの表示例）*
+
+![v0.5 で追加したレイアウト](/images/sub-screen-player/layout.png)
+*v0.5 で追加したレイアウト（`ssp layout clock video:loop.mp4 metric:ci --widths 34,40,26`）*
+
 ## きっかけ
 
 D92 は HDMI ではなく、専用のアプリから USB 経由で画像を送って表示する仕組みです。ところが、そのアプリ（MiraBox Craft）は Windows 専用で、普段使っている Mac からは何も表示できませんでした。
