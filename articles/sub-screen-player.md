@@ -42,7 +42,7 @@ https://github.com/nomunomu0504/sub-screen-player
 *v0.5 で追加したレイアウト（`ssp layout clock video:loop.mp4 metric:ci --widths 34,40,26`）*
 
 :::message
-**追記（2026-10-09）**: v0.6 と v0.7 で、使い始めるのも、使い続けるのも楽になりました。すぐ使える画面を集めた[画面ギャラリー](https://subscreen.dev/ja/screens/)を公開し、`ssp web https://subscreen.dev/screens/system/` の1行で表示できます（数値は手元のデーモンから読みます）。Homebrew（`brew install nomunomu0504/tap/ssp`）と Scoop でもインストールでき、設定ファイルの変更は `ssp config reload` で再起動なしに反映されます。新しい版が出たときは `ssp status` が知らせます。
+**追記（2026-10-09）**: v0.6〜v0.8 で、使い始めるのも、使い続けるのも楽になりました。すぐ使える画面を集めた[画面ギャラリー](https://subscreen.dev/ja/screens/)を公開し、`ssp web https://subscreen.dev/screens/system/` の1行で表示できます（数値は手元のデーモンから読みます）。Homebrew（`brew install nomunomu0504/tap/ssp`）と Scoop でもインストールでき、更新は `ssp update` の1つでデーモンの再起動まで済みます。設定ファイルの変更は `ssp config reload` で再起動なしに反映され、新しい版が出たときは `ssp status` が知らせます。
 :::
 
 ![v0.6 で公開した画面ギャラリーの画面](/images/sub-screen-player/gallery-system.png)
@@ -198,7 +198,7 @@ curl -fsSL https://subscreen.dev/install.sh | sh              # macOS・Linux
 powershell -c "irm https://subscreen.dev/install.ps1 | iex"   # Windows
 ```
 
-Homebrew（macOS・Linux）と Scoop（Windows）でもインストールできます。手順は[ダウンロードページ](https://subscreen.dev/ja/download/)にあります。
+Homebrew（macOS・Linux）と Scoop（Windows）でもインストールできます。手順は[ダウンロードページ](https://subscreen.dev/ja/download/)にあります。v0.8 からは、`ssp update` で更新とデーモンの再起動ができます。
 
 `ssp serve` でデーモンを起動すると時計が表示されます。あとは別のターミナルから操作します。
 
