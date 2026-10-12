@@ -48,6 +48,13 @@ https://github.com/nomunomu0504/sub-screen-player
 ![v0.6 で公開した画面ギャラリーの画面](/images/sub-screen-player/gallery-system.png)
 *v0.6 で公開した画面ギャラリーの画面（`ssp web https://subscreen.dev/screens/system/`）*
 
+:::message
+**追記（2026-10-13）**: v0.10 で、表示を時間を決めて変えられるようになりました。`ssp show alert.png --for 10m` のように `--for` を付けると、その時間がたったあとで、それまでの表示に戻ります（残り時間は `ssp status` に出ます）。レイアウトには `stream` の領域を置けるようになり、プログラムが WebSocket（`?zone=true`）で送るフレームを、時計などの隣に表示できます。レイアウトに名前を付けて（`[layouts.<名前>]`）、スケジュールで切り替えることもできます。[画面ギャラリー](https://subscreen.dev/ja/screens/)には、カレンダー・世界時計・カウントダウンを加えました。その前の v0.9 では、動き続ける Web ページの CPU 負荷を下げています。ページから受け取るフレームを 1 秒あたり `[web] fps`（既定 30）までにして、最後の変化は必ず表示します（Chrome 154 以降。ダウンロードされるヘッドレス Chrome は対応しています）。Apple Silicon の Mac では、画面ギャラリーの system 画面が、ページの見直しと合わせて CPU 1コアの 50% から 5% になりました。スケジュールを使っているときは、WebSocket のストリームが終わった 2 秒後に、スケジュールが示す表示に戻ります。
+:::
+
+![v0.10 で追加した stream の領域](/images/sub-screen-player/stream-zone.png)
+*v0.10 で追加した stream の領域（左は時計、右は WebSocket で送ったテスト映像。`ssp layout clock stream --widths 40`）*
+
 ## きっかけ
 
 D92 は HDMI ではなく、専用のアプリから USB 経由で画像を送って表示する仕組みです。ところが、そのアプリ（MiraBox Craft）は Windows 専用で、普段使っている Mac からは何も表示できませんでした。
