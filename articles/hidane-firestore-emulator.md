@@ -17,7 +17,7 @@ hidane は非公式のオープンソースプロジェクトで、Google LLC �
 :::
 
 :::message
-**追記（2026-10-13）**: v0.2 で Security Rules に対応しました。v0.2.0 から `firestore.rules` で読み取り・書き込み・リスナー・クエリを判定し、拒否メッセージ、`:ruleCoverage`、`debug()` の出力まで公式エミュレータと同じです。v0.2.1 で Emulator UI の Requests タブ（ルールの判定の一覧）に対応し、v0.2.2 ではトランザクションの `verify` 書き込みもルールで判定するようになりました。下の「まだできないこと」のうち、Security Rules とリクエストモニタは解消しています。ルールのテストにもそのまま使えます。v0.2.3 では、Functions エミュレータと併用したときに Firestore トリガーを持つ関数があると起動が止まる不具合を直し、rules-unit-testing が Node とブラウザの両方で公式と同じ結果になることも確かめました。最新版は[リリース一覧](https://github.com/hidane-dev/hidane/releases)にあります。
+**追記（2026-10-13）**: v0.2 で Security Rules に対応しました。v0.2.0 から `firestore.rules` で読み取り・書き込み・リスナー・クエリを判定し、拒否メッセージ、`:ruleCoverage`、`debug()` の出力まで公式エミュレータと同じです。v0.2.1 で Emulator UI の Requests タブ（ルールの判定の一覧）に対応し、v0.2.2 ではトランザクションの `verify` 書き込みもルールで判定するようになりました。下の「まだできないこと」のうち、Security Rules とリクエストモニタは解消しています。ルールのテストにもそのまま使えます。v0.2.3 では、Functions エミュレータと併用したときに Firestore トリガーを持つ関数があると起動が止まる不具合を直し、rules-unit-testing が Node とブラウザの両方で公式と同じ結果になることも確かめました。v0.3.0 では、firebase-js-sdk 自身のブラウザ用テスト 1,183 件が公式エミュレータと同じく hidane でも通るようになり、Web 対応が揃いました。公式の応答をどこまで比べているかは [parity 表](https://hidane.dev/ja/#parity) にまとめています。最新版は[リリース一覧](https://github.com/hidane-dev/hidane/releases)にあります。
 :::
 
 ![hidane v0.1.0](/images/hidane-firestore-emulator/card.png)
