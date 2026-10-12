@@ -16,6 +16,10 @@ Cloud Firestore のローカル開発とテストで使う公式エミュレー�
 hidane は非公式のオープンソースプロジェクトで、Google LLC とは関係ありません。Firebase と Cloud Firestore は Google LLC の商標です。
 :::
 
+:::message
+**追記（2026-10-13）**: v0.2 で Security Rules に対応しました。v0.2.0 から `firestore.rules` で読み取り・書き込み・リスナー・クエリを判定し、拒否メッセージ、`:ruleCoverage`、`debug()` の出力まで公式エミュレータと同じです。v0.2.1 で Emulator UI の Requests タブ（ルールの判定の一覧）に対応し、v0.2.2 ではトランザクションの `verify` 書き込みもルールで判定するようになりました。下の「まだできないこと」のうち、Security Rules とリクエストモニタは解消しています。ルールのテストにもそのまま使えます。最新版は[リリース一覧](https://github.com/hidane-dev/hidane/releases)にあります。
+:::
+
 ![hidane v0.1.0](/images/hidane-firestore-emulator/card.png)
 
 ## 使い方
